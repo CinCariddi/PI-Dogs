@@ -1,0 +1,26 @@
+.boton {
+    display: flex;
+    justify-content: right;
+    padding: 15px;
+    background-color: rgb(160, 159, 159);
+    height: 150;
+    width: 200;
+}
+
+.click2 {
+    background-color: black;
+    display: flex;
+    color: rgb(58, 194, 126);
+    border: 1px solid rgb(58, 194, 126);
+    border-radius: 7px;
+}
+
+.click2:hover {
+    background-color: rgb(43, 251, 112);
+    color: black;
+}
+
+.texto {
+    border: 1px solid white;
+    border-radius: 7px;
+}

@@ -1,0 +1,36 @@
+.det {
+    background-image: url("https://cdn.wallpapersafari.com/32/78/dTuctf.jpg");
+    height: 100vh;
+}
+
+.dt {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: medium;
+}
+
+.img {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    height: 350px;
+    width: 350px;
+    border: 3px dotted black;
+    border-radius: 50%
+}
+
+.list{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.titulo {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: medium;
+}

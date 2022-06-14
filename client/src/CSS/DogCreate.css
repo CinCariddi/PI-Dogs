@@ -1,0 +1,117 @@
+.div2{
+    text-align:center;
+    background-image: url('https://w0.peakpx.com/wallpaper/151/891/HD-wallpaper-perro-color-dog-dogs-huellas-perritos.jpg');
+    background-size: cover;
+    height: 100vh;
+}
+
+.texto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+    background-color: rgb(35, 34, 34);
+    color: rgb(58, 194, 126);
+    width:250px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.inputForm {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.formulario {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-grow: 6;
+    flex-wrap: wrap;
+}
+
+.click {
+    background-color: rgb(58, 194, 126);
+    color: rgb(8, 7, 7);
+    border: 1px solid rgb(58, 194, 126);
+    border-radius: 7px;
+    width: 35%;
+}
+
+.click:hover {
+    background-color: rgb(186, 255, 209);
+    color: black;
+}
+
+.boton2 {
+    background-color: rgb(186, 255, 209);
+    color: black;
+    border-radius: 7px;
+    width: 15%;
+    text-decoration: none;
+}
+.boton3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(186, 255, 209);
+    color: black;
+    border-radius: 7px;
+    width: 100px;
+    text-decoration: none;
+}
+
+.boton2:hover{
+    background-color: rgb(58, 194, 126);
+    color: rgb(8, 7, 7);
+}
+
+.boton3:hover{
+    background-color: rgb(58, 194, 126);
+    color: rgb(8, 7, 7);
+}
+
+.temp {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid rgb(167, 216, 216);;
+    border-radius: 7px;
+    background-color: rgb(167, 216, 216);
+    width: 150px
+}
+
+.x {
+    display: flex;
+    justify-content: right;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 100%
+}
+
+.botonx {
+    display:flex;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 20px;
+    margin-right: 4px;
+    margin: 4px;
+}
+
+.botonx:hover {
+    background-color: rgb(241, 65, 65);
+}
+
+.error {
+    color: red;
+    background-color: white;
+    font-size: 9px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}

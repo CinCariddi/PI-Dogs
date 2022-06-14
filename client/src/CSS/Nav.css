@@ -1,0 +1,31 @@
+.navBar {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: baseline;
+  padding: 10px;
+  background-color: black;
+  color: azure;
+}
+
+
+.boton {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(186, 255, 209);
+  color: black;
+  border-radius: 7px;
+  height: 150;
+  width: 200;
+  text-decoration: none;
+}
+
+.boton:hover{
+  background-color: rgb(58, 194, 126);
+  color: rgb(8, 7, 7);
+}
+
+.nav{
+  height: 200px;
+  width: 270px;
+}

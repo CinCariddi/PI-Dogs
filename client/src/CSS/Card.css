@@ -1,0 +1,35 @@
+.card {
+    width: 300px;
+    height: 500px;
+    margin: auto;
+    border-radius: 20px;
+    border: 2px solid black;
+    text-decoration: none;
+    background-color: white;
+    opacity: 0.8;
+}
+
+
+.imagen {
+    height: 250px;
+    width: 250px;
+    border: 3px dotted black;
+    border-radius: 50%;
+    opacity: none;
+}
+
+.imagen:hover {
+    height: 270px;
+    width: 270px;
+    border:  3px solid rgb(58, 194, 126);
+}
+
+.text {
+    font-family:"Consolas", monospace;
+    text-decoration: none;
+    color: black;
+    text-decoration-line: white;
+}
+.hType {
+    text-decoration-line: white;
+}

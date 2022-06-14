@@ -1,0 +1,46 @@
+.div {
+    background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20210327/pngtree-cute-dog-tiling-background-green-scattered-paw-image_595781.jpg");
+    height: 100vh;
+}
+
+.boton {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(186, 255, 209);
+    color: black;
+    border-radius: 7px;
+    height: 150;
+    width: 200;
+    text-decoration: none;
+}
+
+.boton:hover{
+    background-color: rgb(58, 194, 126);
+    color: rgb(8, 7, 7);
+}
+
+.orden {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    border-radius: 7px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.dog {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    gap: 10px;
+    gap: 10px 20px;
+    row-gap: 10px;
+    column-gap: 20px;
+    height: 350;
+    width: 400;
+    text-decoration-line: white;
+    box-shadow: none;
+}
