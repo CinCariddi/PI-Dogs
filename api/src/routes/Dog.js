@@ -8,25 +8,28 @@ const { Dog, Temperament } = require('../db')
 // de la ruta de creación de raza de perro por body
 // Crea una raza de perro en la base de datos
 router.post('/', async (req, res) => {
-    const {name, height, weight, life_span, creareDb, image, temperaments} = req.body;
     try {
+        let { name, height, weight, life_span, image, temperaments } = req.body;
         const dogCreate = await Dog.create({
-            name: name,
-            height: height,
-            weight: weight,
-            life_span: life_span,
-            creareDb: creareDb,
-            image: image,
+            name,
+            height,
+            weight,
+            life_span,
+            image,
         })
-
-        let associatedTemp = await Temperament.findAll({
-            where: { name: temperaments},
-        })
-        dogCreate.addTemperament(associatedTemp);
-        res.json(dogCreate)
-    }catch(error) {
-        res.status(400).json({error: error})
+        if(temperaments.length > 0) {
+            for (let i = 0; i < temperaments.length; i++) {
+                const associatedTemp = await Temperament.findOrCreate({
+                    where: { name: temperaments[i]},
+                });
+                dogCreate.addTemperament(associatedTemp[0]);
+            }
+            res.json(dogCreate)
+        }
+    } catch(error) {
+        console.log(error)
     }
 })
+
 
 module.exports = router;

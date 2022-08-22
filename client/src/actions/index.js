@@ -61,10 +61,11 @@ export function getNameDogs(name){
 
 export function getTemperaments(){
     return async function (dispatch){
-        var temp = await axios.get("http://localhost:3001/temperament", {
-        
+        const temp = await axios.get("http://localhost:3001/temperament");
+        dispatch ( {
+            type: "GET_TEMPERAMENTS", 
+            payload: temp.data
         });
-        return dispatch ( {type: "GET_TEMPERAMENTS", payload: temp.data} );
     }
 }
 
@@ -87,4 +88,10 @@ export function getDetail(id){
     }catch(error){
         console.log(error)
     }}
+}
+
+export function clearDetail(){
+    return {
+        type: 'CLEAN_DETAIL'
+    }
 }

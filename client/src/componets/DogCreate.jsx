@@ -8,23 +8,23 @@ import '../CSS/DogCreate.css'
 
 function validate(input, oldErrors){
     let errors = oldErrors;
-    if (input.temperament.length < 1){
-        errors.temperament = 'Se requieren al menos un Temperamento';
+    if (input.temperaments.length < 1){
+        errors.temperaments = 'Se requieren al menos un Temperamento';
     } else {
-        errors.temperament = '';
+        errors.temperaments = '';
     }
     if (input.weightMin > input.weightMax || input.weightMax < input.weightMin || input.weightMin <= 0 || input.weightMax <= 0 || input.weightMin === input.weightMax){
         if(input.weightMin > input.weightMax){
-            errors.weightMin = 'El peso mínimo debe ser menor al máximo';
+            errors.weightMin = 'El peso mínimo debe ser menor al máximo, en gramos';
         }
         if(input.weightMax < input.weightMin){
-            errors.weightMax = 'El peso máximo debe ser mayor al mínimo';
+            errors.weightMax = 'El peso máximo debe ser mayor al mínimo, en gramos';
         }
         if(input.weightMin <= 0){
-            errors.weightMin = 'El peso mínimo debe ser mayor a 0';
+            errors.weightMin = 'El peso mínimo debe ser mayor a 0, en gramos';
         }
         if(input.weightMax <= 0){
-            errors.weightMax = 'El peso máximo debe ser mayor a 0';
+            errors.weightMax = 'El peso máximo debe ser mayor a 0, en gramos';
         }
         if(input.weightMin === input.weightMax){
             errors.weightMin = 'Los pesos deben ser diferentes';
@@ -35,16 +35,16 @@ function validate(input, oldErrors){
     }
     if (input.heightMin > input.heightMax || input.heightMax < input.heightMin || input.heightMin <= 0 || input.heightMax <= 0 || input.heightMin === input.heightMax){
         if(input.heightMin > input.heightMax){
-            errors.heightMin = 'La altura mínima debe ser menor a la máxima';
+            errors.heightMin = 'La altura mínima debe ser menor a la máxima, en centimetros';
         }
         if(input.heightMax < input.heightMin){
-            errors.heightMax = 'La altura máxima debe ser mayor a la mínima';
+            errors.heightMax = 'La altura máxima debe ser mayor a la mínima, en centimetros';
         }
         if(input.heightMin <= 0){
-            errors.heightMin = 'La altura mínima debe ser mayor a 0';
+            errors.heightMin = 'La altura mínima debe ser mayor a 0, en centimetros';
         }
         if(input.heightMax <= 0){
-            errors.heightMax = 'La altura máxima debe ser mayor a 0';
+            errors.heightMax = 'La altura máxima debe ser mayor a 0, en centimetros';
         }
         if(input.heightMin === input.heightMax){
             errors.heightMin = 'Las alturas deben ser diferentes';
@@ -59,7 +59,7 @@ function validate(input, oldErrors){
 export default function DogCreate () {
     const dispatch = useDispatch()
     const temperaments = useSelector((state) => state.temperaments)
-    const [errors, setErrors] = useState({ temperament: '', weightMin: '', weightMax:'', heightMin: '', heightMax: ''})
+    const [errors, setErrors] = useState({ temperaments: '', weightMin: '', weightMax:'', heightMin: '', heightMax: ''})
 
     const [input, setInput] = useState({
         name:'',
@@ -71,6 +71,7 @@ export default function DogCreate () {
         life_span: '',
         temperaments: []
     })
+    console.log(input)
 
     function handleChange(e) {
         setInput({
@@ -86,14 +87,14 @@ export default function DogCreate () {
     function handleDelete(e) {
         setInput({
             ...input,
-            temperament: input.temperaments.filter(temp =>temp !== e)
+            temperaments: input.temperaments.filter(temp =>temp !== e)
         })
     }
 
     function handleSelect(e){
         setInput({
             ...input,
-            temperament: [...input.temperaments, e.target.value]
+            temperaments: [...input.temperaments, e.target.value]
         })
     }
 
@@ -105,10 +106,10 @@ export default function DogCreate () {
             ...input,
             [e.target.name]: e.target.value
         }, errors))
-        if (errors.temperament === '' && errors.weightMin === '' && errors.weightMax === '' && errors.heightMin === '' && errors.heightMax === '') {
+        if (errors.temperaments === '' && errors.weightMin === '' && errors.weightMax === '' && errors.heightMin === '' && errors.heightMax === '') {
             const newInput = {
                 name: input.name,
-                temperaments: input.temperaments.join(', '),
+                temperaments: input.temperaments,
                 weight: input.weightMin + ' - ' + input.weightMax,
                 height: input.heightMin + ' - ' + input.heightMax,
                 life_span: input.life_span,
@@ -237,12 +238,12 @@ export default function DogCreate () {
 
                     <label>Temperamento:</label>
                     <select onChange={(e)=> handleSelect(e)} className="click">
-                    {temperaments.length > 0 && temperaments.map((temp) => (
+                    {temperaments && temperaments.map((temp) => (
                         <option value = {temp.name} key={`${temp.id}${temp.name}`}>{temp.name}</option>
                         ))}
                 </select>
                 <ul>
-                    { input.temperaments.length > 0 && input.temperaments.map((e, index) => (
+                    { input.temperaments && input.temperaments.map((e, index) => (
                         <div className="temp" key={`${e}${index}`}>
                             <div className="x">
                                 <button type="button" className="botonx" onClick={() => handleDelete(e)}>X</button>

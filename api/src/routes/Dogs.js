@@ -36,6 +36,7 @@ router.get('/:idRaza', async (req, res) => {
         const allDogs = await getAllDogs();
         if(idRaza) {
             const dog = allDogs.find((d) => String(d.id) === idRaza)
+            dog.temperament = dog.temperament.split(',')
             res.json(dog)
         }else if(id.length > 10) {
             const dogByDb = await Dog.findByPk(id)

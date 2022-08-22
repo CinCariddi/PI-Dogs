@@ -1,6 +1,6 @@
 const axios = require('axios');
 const { Dog, Temperament } = require('./db')
-const URL = `https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}`;
+const URL = `https://api.thedogapi.com/v1/breeds?api_key=ef8f8131-b8ea-428a-b120-803aa2e9bf82`;
 
 const getApiInfo = async () => {
     try {
@@ -13,6 +13,7 @@ const getApiInfo = async () => {
                 weight: e.weight.metric,
                 life_span: e.life_span,
                 image: e.image.url,
+                temperament: e.temperament
             }
         })
         return apiInfo
